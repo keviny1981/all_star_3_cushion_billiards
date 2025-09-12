@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Star 3 Cushion Billiards</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        /* The overall layout is set to a flex container to arrange content vertically */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh; /* Use vh for full viewport height */
+            font-family: 'Press Start 2P', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Pushes content and footer to opposite ends */
+            align-items: center;
+            text-align: center;
+            /* Using a placeholder image that looks like a billiard table */
+            background-image: url('bg.webp');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* The image is already on the body, so this can be simplified or removed */
+            filter: brightness(60%);
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            /* Using auto margins on the top and bottom to center the content between the header and footer */
+            margin-top: auto;
+            margin-bottom: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3.5em; /* Adjusted to fit the image and 'Press Start 2P' font */
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-top: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .button-container {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .button {
+            display: block;
+            width: 400px;
+            padding: 15px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            background-color: #c5ab7a; /* A shade of green that matches the image */
+            border: 2px solid #5a7c36;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #5a7c36;
+        }
+
+        .footer-text {
+            width: 100%;
+            font-size: 1.3rem;
+            text-shadow: 2px 2px 0 #000;
+            line-height: 1.5;
+            color: #d4eaf7;
+            padding-bottom: 20px;
+        }
+
+        .footer-text p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <!-- The content container now only holds the title and buttons -->
+    <div class="content">
+        <h1>All Star</h1>
+        <h2>3 Cushion Billiards</h2>
+        <div class="button-container">
+            <a href="privacy_policy.html" class="button">Privacy Policy</a>
+            <a href="terms_and_conditions.html" class="button">Terms and Conditions</a>
+        </div>
+    </div>
+
+    <!-- The footer is now a direct child of the body, allowing it to be pushed to the bottom -->
+    <div class="footer-text">
+        <p>&copy; <span id="current-year"></span> Youngju Yang. All rights reserved.</p>
+        <p>Contact: kevinyyj001@gmail.com</p>
+    </div>
+
+    <script>
+        // Set the copyright year to the current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
